@@ -10,7 +10,7 @@
 
 
 // Utility Functions 
-function onEvent(event, selector, callback) {
+function onEvent(event, selector, callback) { 
     return selector.addEventListener(event, callback);
 }
 

@@ -144,7 +144,7 @@ input[type="text"] {
     border-radius: 5px;
     background-color: rgb(0 0 0 / 0.2);
     box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.2) inset, -1px -1px 1px 0 rgba(255, 255, 255, 0.1) inset;
-    text-align: left;
+    text-align: left; 
     font-size: var(--app-main-font-size);
     font-weight: 400;
     color: var(--app-light-text-color);

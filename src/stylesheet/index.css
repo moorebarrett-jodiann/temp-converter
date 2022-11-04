@@ -1,0 +1,278 @@
+@import "./reset.css";
+
+:root {
+    --app-dark-bg:#1a1d28;
+    --app-light-bg: #f1f2f3;
+    --app-light-text-color: #f4f6f8;
+    --app-dark-text-color: #1c1c1c;
+    --app-letter-spacing: 0.2px;
+    --app-header-line-height: 56px;
+    --app-text-line-height: 50px;
+    --app-red:#ff3c57;
+    --app-green:#33ab4e;
+    --app-purple:#833cff;
+    --app-orange:#ff833c;
+    --app-orange-hover:#fe7a2d;
+    --app-blue:#3c57ff;
+    --app-blue-hover:#364ee6;
+    --app-main-font-size: 17px;
+}
+    
+body {
+    background-color:var(--app-dark-bg);
+    transition: background-color 0.25s ease-in-out;
+}
+
+.container {
+    width: min(100% - 30px, 1080px);
+    margin-inline: auto;
+}
+
+/**************************************************/
+/*****       Theme Control                   ******/
+/**************************************************/
+
+/* Dark */
+body.dark {
+    background-color:var(--app-dark-bg);
+}
+
+body.dark h1, h2, h3, a, p, label, input {
+    color: var(--app-light-text-color);
+    transition: color 0.25s ease-in-out;
+}
+
+/* Light */
+body:not(.dark) {
+    background-color:var(--app-light-bg);
+    transition: background-color 0.25s ease-in-out;
+}
+
+body:not(.dark) .converter h2 {
+    color: var(--app-dark-text-color);
+    transition: color 0.25s ease-in-out;
+}
+
+body:not(.dark) .converter p {
+    color: var(--app-dark-text-color);
+    transition: color 0.25s ease-in-out;
+}
+
+body:not(.dark) form {
+    background-color: rgba(205, 205, 211, 0.5);
+    transition: background-color 0.25s ease-in-out;
+}
+
+button.theme {
+    position: fixed;
+    width: 170px;
+    height: 50px;
+    bottom: 45px;
+    right: 45px;
+    background-color: var(--app-purple);
+    border: 1px solid var(--app-purple);
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 26px 30px -10px, rgba(0, 0, 0, 0.1) 0px 16px 10px -10px;
+    border-radius: 50px;
+    font-size: var(--app-main-font-size);
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    padding: 10px;
+    color: var(--app-light-text-color);
+}
+
+/**************************************************/
+/*****       Header                          ******/
+/**************************************************/
+
+header {
+    background-color: var(--app-purple);
+    line-height: var(--app-header-line-height);
+    height: 56px;
+}
+
+header h1 {
+    font-size: 25px;
+    font-weight: 600;
+    color: var(--app-light-text-color);
+}
+
+nav ul {
+    list-style: none;
+}
+
+nav ul li {
+    display: inline;
+}
+
+nav ul li + li {
+    margin-left: 18px;
+}
+
+nav ul li a {
+    font-size: var(--app-main-font-size);
+    font-weight: 600;
+    letter-spacing: var(--app-letter-spcaing);
+    cursor: pointer;
+    transition: color 0.25s ease-in-out;
+    text-decoration: none;
+}
+
+nav ul li a:hover {
+    border-bottom: 1px solid var(--app-light-text-color);
+}
+
+/**************************************************/
+/*****       Main                            ******/
+/**************************************************/
+
+main {
+    width: min(100% - 20px, 1200px);
+    height: calc(100vh - 56px);
+    margin-inline: auto;
+    display: grid;
+    align-items: center;
+    justify-content: center;
+}
+
+.flexbox {
+    display: flex;
+    justify-content: space-between;
+}
+
+/**************************************************/
+/*****       Converter                       ******/
+/**************************************************/
+
+.converter {
+    width: 600px;
+}
+
+.converter h2 {
+    font-size: 22px;
+    font-weight: 600;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+form {
+    width: 100%;
+    margin: 20px 15px;
+    background-color: rgba(60, 63, 77, 0.5);
+    padding: 20px 15px;
+    border-radius: 5px;
+}
+
+input[type="text"] {
+    width: 30%;
+    height: 45px;
+    padding: 0 15px;
+    border-radius: 5px;
+    background-color: rgb(0 0 0 / 0.2);
+    box-shadow: 1px 1px 1px 0 rgba(0, 0, 0, 0.2) inset, -1px -1px 1px 0 rgba(255, 255, 255, 0.1) inset;
+    text-align: left;
+    font-size: var(--app-main-font-size);
+    font-weight: 400;
+    color: var(--app-light-text-color);
+    line-height: var(--app-text-line-height);
+}
+
+input:focus {
+    border: 1px solid rgba(255, 255, 255, .25);
+}
+
+input[type="button"] {
+    width: 100px;
+    height: 45px;
+    text-align: center;
+    background-color: var(--app-blue);
+    border: 1px solid var(--app-blue);
+    border-radius: 5px;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 26px 30px -10px, rgba(0, 0, 0, 0.1) 0px 16px 10px -10px;
+    font-size: var(--app-main-font-size);
+    font-weight: 600;
+    letter-spacing: 0.2px;
+    transition: all 0.25s ease-in-out;
+    color: var(--app-light-text-color);
+    cursor: pointer;
+    margin-left: 10px;
+}
+
+input[type="button"]:hover {
+    background-color: var(--app-blue-hover);
+}
+
+/*      Temperature Toggle       */
+
+.switch-group {
+    display: flex;
+    justify-content: space-between;
+    margin: 5px 10px;
+}
+
+.switch-group p {
+    margin-top: 5px;
+}
+
+.switch-group p:first-child {
+    margin-right: 10px;
+}
+
+.switch-group p:last-child {
+    margin-left: 10px;
+}
+
+.switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.switch input { 
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: var(--app-blue);
+    -webkit-transition: .4s;
+    transition: .4s;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: #fff;
+    -webkit-transition: .4s;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: var(--app-purple);
+}
+
+input:focus + .slider {
+    box-shadow: 0 0 1px var(--app-purple);
+}
+
+input:checked + .slider:before {
+    -webkit-transform: translateX(26px);
+    -ms-transform: translateX(26px);
+    transform: translateX(26px);
+}
+
+.slider.round {
+    border-radius: 50px;
+}

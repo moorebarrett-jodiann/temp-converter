@@ -96,31 +96,6 @@ header h1 {
     color: var(--app-light-text-color);
 }
 
-nav ul {
-    list-style: none;
-}
-
-nav ul li {
-    display: inline;
-}
-
-nav ul li + li {
-    margin-left: 18px;
-}
-
-nav ul li a {
-    font-size: var(--app-main-font-size);
-    font-weight: 600;
-    letter-spacing: var(--app-letter-spcaing);
-    cursor: pointer;
-    transition: color 0.25s ease-in-out;
-    text-decoration: none;
-}
-
-nav ul li a:hover {
-    border-bottom: 1px solid var(--app-light-text-color);
-}
-
 /**************************************************/
 /*****       Main                            ******/
 /**************************************************/

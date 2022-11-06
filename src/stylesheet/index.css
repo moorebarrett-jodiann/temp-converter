@@ -43,6 +43,11 @@ body.dark h1, h2, h3, a, p, label, input {
 }
 
 /* Light */
+
+body:not(.dark) input {
+    color: var(--app-dark-text-color);
+}
+
 body:not(.dark) {
     background-color:var(--app-light-bg);
     transition: background-color 0.25s ease-in-out;
